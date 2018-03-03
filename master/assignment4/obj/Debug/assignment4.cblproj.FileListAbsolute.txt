@@ -1,0 +1,6 @@
+C:\school\cobol\master\master\assignment4\bin\Debug\assignment4.exe
+C:\school\cobol\master\master\assignment4\bin\Debug\assignment4.pdb
+C:\school\cobol\master\master\assignment4\obj\Debug\assignment4.cblprojResolveAssemblyReference.cache
+C:\school\cobol\master\master\assignment4\obj\Debug\assignment4.cblproj.CoreCompileInputs.cache
+C:\school\cobol\master\master\assignment4\obj\Debug\assignment4.exe
+C:\school\cobol\master\master\assignment4\obj\Debug\assignment4.pdb
