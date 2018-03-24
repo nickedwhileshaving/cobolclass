@@ -1,0 +1,63 @@
+          IDENTIFICATION DIVISION.
+       PROGRAM-ID.   PRMCHKFL.
+       AUTHOR.       YOURNAME
+      * CONVERT THE IN-LINE PERFORMS INTO PARAGRAPHS.
+       DATE-WRITTEN. JAN 2017 
+       DATA DIVISION. 
+       WORKING-STORAGE SECTION.
+      
+       01 NUM-IN          PIC XXXX.
+          88 INTEGER-ENTERED       VALUE "0000" THRU "9999".
+          88 USER-WANTS-TO-QUIT    VALUE "x" "X" "XX" "xx".
+       01 NUM-IN-INT REDEFINES
+          NUM-IN          PIC 9999.
+       01 WS-QUOTIENT     PIC 9999.9999
+                                   VALUE 0.
+       01 WS-REMAINDER    PIC 9999 VALUE 1.
+          88 NOT-PRIME-NUMBER      VALUE 0.
+       01 WS-DIVISOR      PIC 9999 VALUE 0.
+        
+       PROCEDURE DIVISION.
+       0000-DRIVER.
+           DISPLAY "Prime Number Checking Program".
+           PERFORM 1100-GET-USER-INPUT.
+           PERFORM 1000-CHECK-NUMBER
+             UNTIL USER-WANTS-TO-QUIT.
+           display "EXIT".
+           GOBACK.
+           
+       1000-CHECK-NUMBER.
+      * CHANGE THE IN-LINE PERFORM TO A PARAGRAPH, 1010-DIVISION-CALC
+           
+           MOVE 1 TO WS-REMAINDER.
+           PERFORM VARYING WS-DIVISOR FROM 3 BY 1 
+             UNTIL WS-REMAINDER = 0
+                OR WS-DIVISOR = (NUM-IN-INT - 1)
+                OR NUM-IN-INT = 1
+               DIVIDE NUM-IN-INT by WS-DIVISOR 
+                 GIVING WS-QUOTIENT REMAINDER WS-REMAINDER
+           END-PERFORM
+      * CHANGE THIS NUMBER CHECK TO A PARAGRAPH YOU ADD, 1020-PRIME-CHK
+      * THIS WILL MEAN CREATING A PARAGRAPH WITH THE IF STATEMENT, 
+      * REMOVING THESE LINES OF CODE AND REFERENCING THE NEW PARA. 
+           IF NOT-PRIME-NUMBER OR NUM-IN-INT = 1
+             DISPLAY NUM-IN " IS NOT A PRIME"
+           ELSE  
+             display NUM-IN " IS A PRIME".
+             
+           MOVE SPACES TO NUM-IN.
+           PERFORM 1100-GET-USER-INPUT.
+           
+       1010-DIVISION-CALC.
+      * PUT THE CODE FROM THE IN-LINE PERFORM HERE.
+           
+       1100-GET-USER-INPUT.
+      * CHANGE THIS IN-LINE PERFORM TO EXECUTE IN A NEW PARAGRAPH
+      * NAMED 1110-INPUT-CHECK.  ADD THIS PARAGRAPH, MOVE THE CODE
+      * TO IT AND REFERENCE IT.
+        
+           PERFORM until NUM-IN is numeric OR USER-WANTS-TO-QUIT
+             display "ENTER INTEGER 0000-9999 (WITH LEADING ZEROES)"
+             display "(OR ENTER X TO QUIT)."
+             ACCEPT NUM-IN
+           END-PERFORM

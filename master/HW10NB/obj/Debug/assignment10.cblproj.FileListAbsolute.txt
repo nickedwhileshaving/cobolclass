@@ -1,0 +1,6 @@
+C:\school\cobol\cobolclass\master\HW10NB\bin\Debug\HW10NB.exe
+C:\school\cobol\cobolclass\master\HW10NB\obj\Debug\assignment10.cblproj.CoreCompileInputs.cache
+C:\school\cobol\cobolclass\master\HW10NB\obj\Debug\HW10NB.exe
+C:\school\cobol\cobolclass\master\HW10NB\obj\Debug\HW10NB.pdb
+C:\school\cobol\cobolclass\master\HW10NB\bin\Debug\HW10NB.pdb
+C:\school\cobol\cobolclass\master\HW10NB\obj\Debug\assignment10.cblprojResolveAssemblyReference.cache
