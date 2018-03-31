@@ -32,7 +32,7 @@
            PERFORM VARYING BOTTLES FROM NUM-IN-INT BY NUM-IN-INT-DECR UNTIL
                BOTTLES < NUM-IN-INT-DECR
                DISPLAY SPACES
-               SUBTRACT 1 FROM BOTTLES GIVING REMAINING-BOTTLES
+               ADD NUM-IN-INT-DECR TO BOTTLES GIVING REMAINING-BOTTLES
                EVALUATE BOTTLES
                    WHEN 1
                        DISPLAY "1 BOTTLE OF BEER ON THE WALL, "
@@ -55,11 +55,24 @@
                          COUNTING FOR LEADING ZEROS
                        ADD 1 TO COUNTING GIVING STARTING-POSITION
                        SUBTRACT COUNTING FROM 2 GIVING POSITIONS
-                       DISPLAY "TAKE " NUM-IN-TEXT " ONE DOWN, PASS IT "
-                               "AROUND, "
-                               REMAINING-BOTTLES
-                               (STARTING-POSITION:POSITIONS)
+                       IF REMAINING-BOTTLES < 0 THEN
+                              DISPLAY "TAKE " NUM-IN-TEXT " ONE DOWN, "
+                              "PASS IT AROUND, NEGATIVE"
                                " BOTTLES OF BEER ON THE WALL."
+                       ELSE
+                           IF REMAINING-BOTTLES = 0 THEN
+                           DISPLAY "TAKE " NUM-IN-TEXT " ONE DOWN, "
+                                      "PASS IT AROUND, ZERO "
+                                      "BOTTLES OF BEER ON THE WALL."
+                           ELSE
+                           DISPLAY "TAKE " NUM-IN-TEXT " ONE DOWN, "
+                                      "PASS IT AROUND, "
+                                       REMAINING-BOTTLES
+                                       (STARTING-POSITION:POSITIONS)
+                                       " BOTTLES OF BEER ON THE WALL."
+                           END-IF
+                       END-IF
+
                END-EVALUATE
            END-PERFORM
            DISPLAY "NO MORE BOTTLES OF BEER ON THE WALL, "
