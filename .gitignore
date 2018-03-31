@@ -1,0 +1,6 @@
+*.exe
+*.pdb
+*.dep
+*.tlog
+*.suo
+*.idy

@@ -27,6 +27,8 @@ Project("{535C04D7-A2A5-47C7-83E0-B340A995CD1F}") = "assignment10", "assignment1
 EndProject
 Project("{535C04D7-A2A5-47C7-83E0-B340A995CD1F}") = "assignment11", "assignment11\assignment11.cblproj", "{0F03AEC5-C474-42C5-AD65-1E10A9850C14}"
 EndProject
+Project("{535C04D7-A2A5-47C7-83E0-B340A995CD1F}") = "assignement12", "assignement12\assignement12.cblproj", "{D0DBD5FD-19DE-4A4C-869C-4AA746FB39AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{0F03AEC5-C474-42C5-AD65-1E10A9850C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F03AEC5-C474-42C5-AD65-1E10A9850C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F03AEC5-C474-42C5-AD65-1E10A9850C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0DBD5FD-19DE-4A4C-869C-4AA746FB39AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0DBD5FD-19DE-4A4C-869C-4AA746FB39AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0DBD5FD-19DE-4A4C-869C-4AA746FB39AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0DBD5FD-19DE-4A4C-869C-4AA746FB39AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
