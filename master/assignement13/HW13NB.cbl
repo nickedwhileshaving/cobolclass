@@ -29,6 +29,7 @@
        01  WS-NUMERIC-RATE            PIC 999V99 VALUE 0.00.
        
        01  WS-COMM-RATE               PIC V99 VALUE .09.
+       01  WS-COMM-PERCENT            PIC 99.
 
        01  WS-GROSS-SALES             PIC 9(4)V99 VALUE 0.
        01  WS-COMM-AMOUNT             PIC 999V99 VALUE 0.
@@ -39,6 +40,7 @@
        01  WS-GROSS-SALES-FORM        PIC ZZZZZZZZZZZ.99.
        01  WS-COMMISSION-FORM         PIC ZZZZZZZZZZZ.99.
        01  WS-PROFIT-AMOUNT-FORM      PIC $ZZZZZZZZZZ.99.
+       01  WS-COMM-PERCENT-FORM       PIC ZZZZZZZZZZZ99.
 
        01  WS-DASHED-LINE             PIC X(30)
                                  VALUE '______________________________'.
@@ -116,6 +118,9 @@
                            - WS-COMM-AMOUNT.
            MOVE WS-NET-PROFIT TO WS-PROFIT-AMOUNT-FORM
            DISPLAY 'PROFIT AMOUNT: ' WS-PROFIT-AMOUNT-FORM.
+           COMPUTE WS-COMM-PERCENT = WS-COMM-RATE * 100.
+           MOVE WS-COMM-PERCENT TO WS-COMM-PERCENT-FORM.
+           DISPLAY 'COMMISSION   : %' WS-COMM-PERCENT-FORM.
            DISPLAY WS-DASHED-LINE.
            DISPLAY 'PROGRAM ENDS'.
            DISPLAY WS-DATE-TIME-LINE.
