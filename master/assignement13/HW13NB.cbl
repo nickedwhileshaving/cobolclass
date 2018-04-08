@@ -25,12 +25,8 @@
            05 WS-UNIT-RATE-DOLLARS    PIC X(3).
            05 WS-UNIT-RATE-DECIMAL    PIC X.
            05 WS-UNIT-RATE-CENTS      PIC X(2).
-       01  WS-NUMERIC-RATE            PIC 999V99.
-       
-       01  WS-NUMERIC-UNIT-PARTS.
-           05 WS-NUMERIC-UNIT-DOLLARS PIC X(3).
-           05 WS-NUMERIC-UNIT-CENTS   PIC X(2).
-       01  WS-NUMERIC-UNIT-WHOLE      PIC 999V99.         
+       01  WS-UNIT-RATE-DUMMY-FIVE    PIC X(5).
+       01  WS-NUMERIC-RATE            PIC 999V99 VALUE 0.00.
        
        01  WS-COMM-RATE               PIC V99 VALUE .09.
 
@@ -62,6 +58,7 @@
            PERFORM 1200-GET-USER-UNITS.
            PERFORM 1300-CONVERT-TO-NUMERICS.
            PERFORM 2000-DISPLAY-VALUES.
+           GOBACK.
         
        1000-GET-DATE-TIME.
              MOVE FUNCTION CURRENT-DATE (1:8) TO WS-DATE-LINE-DATE.                                
@@ -88,7 +85,10 @@
        1300-CONVERT-TO-NUMERICS.
       * CONVERT THE STRING DATA ENTERED INTO NUMERIC FIELD:
            MOVE WS-UNITS-IN TO WS-UNITS-NUMERIC.
-           MOVE WS-UNIT-RATE-IN TO WS-NUMERIC-RATE.
+           STRING WS-UNIT-RATE-DOLLARS
+                  WS-UNIT-RATE-CENTS 
+           INTO WS-UNIT-RATE-DUMMY-FIVE.
+           MOVE WS-UNIT-RATE-DUMMY-FIVE TO WS-NUMERIC-RATE.
 
        2000-DISPLAY-VALUES.
            DISPLAY WS-DASHED-LINE.
@@ -119,4 +119,3 @@
            DISPLAY WS-DASHED-LINE.
            DISPLAY 'PROGRAM ENDS'.
            DISPLAY WS-DATE-TIME-LINE.
-                                        .
