@@ -79,6 +79,14 @@
 006000
 006100 01  WS-RULER                   PIC X(39)
 006200     VALUE "----+----1----+----2----+----3----+----".
+
+       01  PAGE-HDG-01.
+           05 PAGE-HDG-01-CC          PIC X(01).
+           05 FILLER                  PIC X(62) VALUE SPACES.
+           05 FILLER                  PIC X(12) VALUE 'SHAPE REPORT'.
+           05 FILLER                  PIC X(48) VALUE SPACES.
+       01  PAGE-HDG-02.
+           05 FILLER 
 006300
 006400 PROCEDURE DIVISION.
 006500 0000-DRIVER.
