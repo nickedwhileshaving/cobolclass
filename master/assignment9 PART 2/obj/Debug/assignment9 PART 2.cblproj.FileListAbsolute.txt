@@ -1,5 +1,0 @@
-C:\school\cobol\cobolclass\master\assignment9 PART 2\bin\Debug\assignment9_PART_2.exe
-C:\school\cobol\cobolclass\master\assignment9 PART 2\bin\Debug\assignment9_PART_2.pdb
-C:\school\cobol\cobolclass\master\assignment9 PART 2\obj\Debug\assignment9 PART 2.cblproj.CoreCompileInputs.cache
-C:\school\cobol\cobolclass\master\assignment9 PART 2\obj\Debug\assignment9_PART_2.exe
-C:\school\cobol\cobolclass\master\assignment9 PART 2\obj\Debug\assignment9_PART_2.pdb

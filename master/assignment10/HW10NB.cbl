@@ -16,6 +16,7 @@
           88 NOT-PRIME-NUMBER      VALUE 0.
        01 WS-DIVISOR      PIC 9999 VALUE 0.
         
+
        PROCEDURE DIVISION.
        0000-DRIVER.
            DISPLAY "Prime Number Checking Program".

@@ -4,9 +4,3 @@ C:\school\cobol\master\master\assignment6\bin\Debug\assignment6.exe
 C:\school\cobol\master\master\assignment6\bin\Debug\assignment6.pdb
 C:\school\cobol\master\master\assignment6\obj\Debug\assignment6.exe
 C:\school\cobol\master\master\assignment6\obj\Debug\assignment6.pdb
-C:\school\cobol\cobolclass\master\assignment6\bin\Debug\assignment6.exe
-C:\school\cobol\cobolclass\master\assignment6\bin\Debug\assignment6.pdb
-C:\school\cobol\cobolclass\master\assignment6\obj\Debug\assignment6.cblprojResolveAssemblyReference.cache
-C:\school\cobol\cobolclass\master\assignment6\obj\Debug\assignment6.cblproj.CoreCompileInputs.cache
-C:\school\cobol\cobolclass\master\assignment6\obj\Debug\assignment6.exe
-C:\school\cobol\cobolclass\master\assignment6\obj\Debug\assignment6.pdb

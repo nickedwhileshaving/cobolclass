@@ -1,6 +1,0 @@
-C:\school\cobol\cobolclass\master\assignement13\obj\Debug\assignement13.cblprojResolveAssemblyReference.cache
-C:\school\cobol\cobolclass\master\assignement13\obj\Debug\assignement13.cblproj.CoreCompileInputs.cache
-C:\school\cobol\cobolclass\master\assignement13\bin\Debug\assignement13.exe
-C:\school\cobol\cobolclass\master\assignement13\bin\Debug\assignement13.pdb
-C:\school\cobol\cobolclass\master\assignement13\obj\Debug\assignement13.exe
-C:\school\cobol\cobolclass\master\assignement13\obj\Debug\assignement13.pdb
