@@ -86,7 +86,27 @@
            05 FILLER                  PIC X(12) VALUE 'SHAPE REPORT'.
            05 FILLER                  PIC X(48) VALUE SPACES.
        01  PAGE-HDG-02.
-           05 FILLER 
+           05 FILLER                  PIC X(62) VALUE SPACES.
+           05 FILLER                  PIC X(19) VALUE "RUN DATE"
+                                                ": 17/03/04".
+           05 FILLER                  PIC X(43) VALUE SPACES.
+       01 SHAPE-DETAIL-LINE.
+           05 DTL-CC                  PIC X(01).
+           05 FILLER                  PIC X(19) VALUE SPACES.
+           05 DTL-SHAPE               PIC X(10).
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 DTL-SHAPE-SIZE-1        PIC ZZ9.
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 DTL-SHAPE-SIZE-2        PIC ZZ9.
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 DTL-SHAPE-AREA          PIC ZZZ,ZZ9.
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 DTL-SHAPE-PERIMETER     PIC ZZZ,ZZ9.
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 DTL-SHAPE-PRICE         PIC Z,ZZZ,ZZZ.99.
+           05 FILLER                  PIC X(10) VALUE SPACES.
+
+
 006300
 006400 PROCEDURE DIVISION.
 006500 0000-DRIVER.
