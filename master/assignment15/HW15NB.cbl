@@ -129,20 +129,30 @@
        01 DASHED-LINE.
            05 FILLER                  PIC X(20) VALUE SPACES.
            05 DSHD-LINE               PIC X(93) VALUE ALL "-".
+           05 FILLER                  PIC X(21) VALUE SPACES.
 
-       01 SHAPE-TOTAL-LINE.
-           05 TOTAL-CC                PIC X(01).
-           05 FILLER                  PIC X(19) VALUE 'FILE TOTALS.
-           05 FILLER                  PIC X(?).
-           05 RECORD-COUNT-RPT        PIC ZZ9.
+       01 SHAPE-TOTALS-LINE.
+           05 TOTAL-LINE-CC           PIC X(01).
+           05 FILLER                  PIC X(19) VALUE SPACES.
+           05 FILLER                  PIC X(19) VALUE "FILE TOTALS".
+           05 FILLER                  PIC X(20) VALUE SPACES.
+           05 TOTAL-LINE-COUNT        PIC Z,ZZ9.
            05 FILLER                  PIC X(10) VALUE SPACES.
-           05 DTL-SHAPE-AREA          PIC ZZZ,ZZ9.
+           05 TOTAL-LINE-AREA         PIC ZZZ,ZZ9.
            05 FILLER                  PIC X(10) VALUE SPACES.
-           05 DTL-SHAPE-PERIMETER     PIC ZZZ,ZZ9.
+           05 TOTAL-LINE-PERIMETER    PIC ZZZ,ZZ9.
            05 FILLER                  PIC X(10) VALUE SPACES.
-           05 DTL-SHAPE-PRICE         PIC Z,ZZZ,ZZZ.99.
+           05 TOTAL-LINE-PRICE        PIC $$,ZZZ,ZZ9.99.
            05 FILLER                  PIC X(10) VALUE SPACES.
 
+       01 WS-RUN-DATE                 PIC X(08).
+       01 WS-REPORT-RULER.
+           05 FILLER                   PIC X(50)
+           VALUE "----+----1----+----2----+----3----+----4----+----5".
+           05 FILLER                   PIC X(50)
+           VALUE "----+----6----+----7----+----8----+----9----+----0".
+           05 FILLER                   PIC X(133)
+           VALUE "----+----1----+----2----+----3---".
 
 006300
 006400 PROCEDURE DIVISION.
@@ -158,13 +168,13 @@
 007400       perform XXXX-WRITE-SHAPES
 007500       perform XXXX-READ-SHAPES
 007600     END-PERFORM.
-007700     write SHAPE-REC-OUT from WS-RULER.
-007800     move WS-TOTAL-FILE-COST to WS-COST-OUT.
+007700     WRITE SHAPE-REC-OUT FROM WS-RULER.
+007800     MOVE WS-TOTAL-FILE-COST to WS-COST-OUT.
 007900
-008000     display " FILE COST      : " WS-COST-OUT.
-008100     display " RECORDS READ   : " WS-RECORD-COUNT-IN.
-008200     display " RECORDS WRITTEN: " WS-RECORD-COUNT-OUT.
-008300     display "END OF MATHSHPS".
+008000     DISPLAY " FILE COST      : " WS-COST-OUT.
+008100     DISPLAY " RECORDS READ   : " WS-RECORD-COUNT-IN.
+008200     DISPLAY " RECORDS WRITTEN: " WS-RECORD-COUNT-OUT.
+008300     DISPLAY "END OF MATHSHPS".
 008400
 008500     close SHAPE-FILE-IN
 008600           SHAPE-FILE-OUT.
