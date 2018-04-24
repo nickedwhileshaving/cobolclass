@@ -87,17 +87,54 @@
            05 FILLER                  PIC X(48) VALUE SPACES.
        01  PAGE-HDG-02.
            05 FILLER                  PIC X(62) VALUE SPACES.
-           05 FILLER                  PIC X(19) VALUE "RUN DATE"
-                                                ": 17/03/04".
+           05 FILLER                  PIC X(10) VALUE 
+                                                "RUN DATE: ".
+           05 PAGE-HDG-02-YY          PIC X(02).
+           05 FILLER                  PIC X(01) VALUE "/".
+           05 PAGE-HDG-02-DD          PIC X(02).
+           05 FILLER                  PIC X(01) VALUE "/".
+           05 PAGE-HDG-02-MM          PIC X(02).
            05 FILLER                  PIC X(43) VALUE SPACES.
+       01 PAGE-HDG-03.
+           05 PAGE-HDG-03-CC          PIC X(01).
+           05 FILLER                  PIC X(20) VALUE SPACES.
+           05 FILLER                  PIC X(20) VALUE "SHAPE".
+           05 FILLER                  PIC X(13) VALUE SPACES.
+           05 FILLER                  PIC X(06) VALUE "SIDE 1".
+           05 FILLER                  PIC X(07) VALUE SPACES.
+           05 FILLER                  PIC X(06) VALUE "SIDE 2".
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 FILLER                  PIC X(04) VALUE "AREA".
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 FILLER                  PIC X(09) VALUE "PERIMETER".
+           05 FILLER                  PIC X(13) VALUE SPACES.
+           05 FILLER                  PIC X(05) VALUE "PRICE".
+           05 FILLER                  PIC X(20) VALUE SPACES.
        01 SHAPE-DETAIL-LINE.
            05 DTL-CC                  PIC X(01).
            05 FILLER                  PIC X(19) VALUE SPACES.
            05 DTL-SHAPE               PIC X(10).
            05 FILLER                  PIC X(10) VALUE SPACES.
-           05 DTL-SHAPE-SIZE-1        PIC ZZ9.
+           05 DTL-SHAPE-SIDE-1        PIC ZZ9.
            05 FILLER                  PIC X(10) VALUE SPACES.
-           05 DTL-SHAPE-SIZE-2        PIC ZZ9.
+           05 DTL-SHAPE-SIDE-2        PIC ZZ9.
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 DTL-SHAPE-AREA          PIC ZZZ,ZZ9.
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 DTL-SHAPE-PERIMETER     PIC ZZZ,ZZ9.
+           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 DTL-SHAPE-PRICE         PIC Z,ZZZ,ZZZ.99.
+           05 FILLER                  PIC X(10) VALUE SPACES.
+
+       01 DASHED-LINE.
+           05 FILLER                  PIC X(20) VALUE SPACES.
+           05 DSHD-LINE               PIC X(93) VALUE ALL "-".
+
+       01 SHAPE-TOTAL-LINE.
+           05 TOTAL-CC                PIC X(01).
+           05 FILLER                  PIC X(19) VALUE 'FILE TOTALS.
+           05 FILLER                  PIC X(?).
+           05 RECORD-COUNT-RPT        PIC ZZ9.
            05 FILLER                  PIC X(10) VALUE SPACES.
            05 DTL-SHAPE-AREA          PIC ZZZ,ZZ9.
            05 FILLER                  PIC X(10) VALUE SPACES.
