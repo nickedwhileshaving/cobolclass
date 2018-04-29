@@ -69,6 +69,8 @@
            05 WS-TOTAL-PERIMETER     PIC 9(10).
            05 WS-TOTAL-PRICE         PIC 9(10)V99.
            05 WS-RECORD-COUNT        PIC 9(10).
+           05 WS-PRICE-PER-SQ        PIC 9(10)V99.
+           05 WS-PRICE-SQ-FT-TOTAL   PIC 9(10)V99.
 004900
 005000 01  WS-COST-OUT               PIC $ZZZ,ZZZ.99.
 005100
@@ -116,7 +118,8 @@
            05 FILLER                  PIC X(09) VALUE "PERIMETER".
            05 FILLER                  PIC X(13) VALUE SPACES.
            05 FILLER                  PIC X(05) VALUE "PRICE".
-           05 FILLER                  PIC X(20) VALUE SPACES.
+           05 FILLER                  PIC X(05) VALUE SPACES.
+           05 FILLER                  PIC X(11) VALUE 'PRICE/SQ FT'.
        01 SHAPE-DETAIL-LINE.
            05 DTL-CC                  PIC X(01).
            05 FILLER                  PIC X(19) VALUE SPACES.
@@ -131,26 +134,28 @@
            05 DTL-SHAPE-PERIMETER     PIC ZZZ,ZZ9.
            05 FILLER                  PIC X(10) VALUE SPACES.
            05 DTL-SHAPE-PRICE         PIC Z,ZZZ,ZZZ.99.
-           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 FILLER                  PIC X(05) VALUE SPACES.
+           05 DTL-PRICE-SQ-FT         PIC Z,ZZ9.99.
 
        01 DASHED-LINE.
            05 FILLER                  PIC X(20) VALUE SPACES.
-           05 DSHD-LINE               PIC X(93) VALUE ALL "-".
-           05 FILLER                  PIC X(21) VALUE SPACES.
+           05 DSHD-LINE               PIC X(105) VALUE ALL "-".
+           05 FILLER                  PIC X(09) VALUE SPACES.
 
        01 SHAPE-TOTALS-LINE.
            05 TOTAL-LINE-CC           PIC X(01).
            05 FILLER                  PIC X(19) VALUE SPACES.
-           05 FILLER                  PIC X(19) VALUE "FILE TOTALS".
-           05 FILLER                  PIC X(20) VALUE SPACES.
+           05 FILLER                  PIC X(20) VALUE "FILE TOTALS".
+           05 FILLER                  PIC X(11) VALUE SPACES.
            05 TOTAL-LINE-COUNT        PIC Z,ZZ9.
            05 FILLER                  PIC X(10) VALUE SPACES.
            05 TOTAL-LINE-AREA         PIC ZZZ,ZZ9.
            05 FILLER                  PIC X(10) VALUE SPACES.
            05 TOTAL-LINE-PERIMETER    PIC ZZZ,ZZ9.
-           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 FILLER                  PIC X(09) VALUE SPACES.
            05 TOTAL-LINE-PRICE        PIC $$,ZZZ,ZZ9.99.
-           05 FILLER                  PIC X(10) VALUE SPACES.
+           05 FILLER                  PIC X(06) VALUE SPACES.
+           05 SQ-FT-TOTAL             PIC $$$$.99.
 
        01 WS-RUN-DATE                 PIC X(08).
        01 WS-REPORT-RULER.
@@ -215,12 +220,15 @@
 009500                           = WS-TOTAL-FILE-COST + PRICE-OUT.
 
            COMPUTE WS-RECORD-COUNT = WS-RECORD-COUNT + 1.
-
+           COMPUTE WS-PRICE-PER-SQ = AREA-OUT / PRICE-OUT.
+           MOVE WS-PRICE-PER-SQ TO DTL-PRICE-SQ-FT.
       *    ADD THE MATHY STUFF ABOVE TO RUNNING TOTALS.
            COMPUTE WS-TOTAL-AREA = WS-TOTAL-AREA + AREA-OUT.
            COMPUTE WS-TOTAL-PERIMETER = WS-TOTAL-PERIMETER +
                                    PERIMETER-OUT.
            COMPUTE WS-TOTAL-PRICE = WS-TOTAL-PRICE + PRICE-OUT.
+           COMPUTE WS-PRICE-SQ-FT-TOTAL =
+                  WS-PRICE-SQ-FT-TOTAL + WS-PRICE-PER-SQ.
 010300
 010400 4000-WRITE-SHAPES.
 010500     WRITE SHAPE-REC-OUT FROM CALCULATED-SHAPES-RECORD.
@@ -249,6 +257,7 @@
            MOVE WS-TOTAL-AREA TO TOTAL-LINE-AREA.
            MOVE WS-TOTAL-PERIMETER TO TOTAL-LINE-PERIMETER.
            MOVE WS-TOTAL-PRICE TO TOTAL-LINE-PRICE.
+           MOVE WS-PRICE-SQ-FT-TOTAL TO SQ-FT-TOTAL.
            WRITE SHAPE-REC-OUT-RPT FROM SHAPE-TOTALS-LINE.
            close SHAPE-FILE-IN
 008600           SHAPE-FILE-OUT
