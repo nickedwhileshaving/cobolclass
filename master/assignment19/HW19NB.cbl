@@ -38,13 +38,12 @@
              88 WS-VALID-PRESIDENT-SUB VALUE 1 THRU 45.
 
        01 WS-MISC.
-          05 WS-ALPHABET-CHAR          PIC X(01).
           05 WS-THE-PROMPT             PIC X(46) 
                   VALUE "WHICH PRESIDENT DO YOU WANT TO KNOW (01 - 45)?".
 
        01 CharIn PIC X(02).
            88 ExitCharacter VALUE "x", "X".
-           88 ListAll       VALUE "LA".
+           88 ListAll       VALUE "LA", "la".
 
 
 
