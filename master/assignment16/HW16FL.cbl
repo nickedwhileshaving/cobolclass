@@ -39,6 +39,8 @@
 005800    05  PAYROLL-EMP-HOURS        PIC 9(02)V99.
 005900    05  PAYROLL-EMP-RATE         PIC 9(02)V99.
 006000    05  PAYROLL-EMP-DEDUCTIONS   PIC X(01).
+          05  FILLER                   PIC X(03).
+
 006100
 006200 FD  PAYROLL-OUT
 006300     RECORDING MODE IS F
@@ -92,82 +94,82 @@
 009320*  THEM AT THE BEGINNING OF THE PROGRAM BEFORE ANY REPORT
 009330*  DETAIL LINES CONTAINING PAYROLL AMOUNTS ARE WRITE.
        01 WS-PAYROLL-RPT-HDR1.
-          05 FILLER                  PIC X(60).
+          05 FILLER                  PIC X(60) VALUE ALL SPACES.
           05 FILLER                  PIC X(14) VALUE "PAYROLL REPORT".
-          05 FILLER                  PIC X(59).
+          05 FILLER                  PIC X(59) VALUE ALL SPACES.
        01 WS-PAYROLL-RPT-HDR2.
-          05 FILLER                  PIC X(66).
+          05 FILLER                  PIC X(66) VALUE ALL SPACES.
           05 FILLER                  PIC X(02) VALUE "BY".
-          05 FILLER                  PIC X(65).
+          05 FILLER                  PIC X(65) VALUE ALL SPACES.
        01 WS-PAYROLL-RPT-HDR3.
-          05 FILLER                  PIC X(61).
+          05 FILLER                  PIC X(61) VALUE ALL SPACES.
           05 FILLER                  PIC X(13) VALUE "NIKOLINA BEST".
-          05 FILLER                  PIC X(59).
+          05 FILLER                  PIC X(59) VALUE ALL SPACES.
        01 WS-PAYROLL-RPT-HDR4.
-          05 FILLER                  PIC X(60).
+          05 FILLER                  PIC X(60) VALUE ALL SPACES.
           05 FILLER                  PIC X(06) VALUE "AS OF ".
           05 WS-PAYROLL-RPT-DATE     PIC X(08).
-          05 FILLER                  PIC X(57).
+          05 FILLER                  PIC X(57) VALUE ALL SPACES.
        01 WS-PAYROLL-RPT-HDR5.
-          05 FILLER                  PIC X(21).
+          05 FILLER                  PIC X(21) VALUE ALL SPACES.
           05 FILLER                  PIC X(07) VALUE "PAYDATE".
-          05 FILLER                  PIC X(04).
+          05 FILLER                  PIC X(04) VALUE ALL SPACES.
           05 FILLER                  PIC X(08) VALUE "EMP. NUM".
-          05 FILLER                  PIC X(01).
+          05 FILLER                  PIC X(01) VALUE ALL SPACES.
           05 FILLER                  PIC X(12) VALUE "HOURS WORKED".
-          05 FILLER                  PIC X(02).
+          05 FILLER                  PIC X(02) VALUE ALL SPACES.
           05 FILLER                  PIC X(11) VALUE "HOURLY RATE".
-          05 FILLER                  PIC X(01).
+          05 FILLER                  PIC X(01) VALUE ALL SPACES.
           05 FILLER                  PIC X(08) VALUE "BASE PAY".
-          05 FILLER                  PIC X(02).
+          05 FILLER                  PIC X(02) VALUE ALL SPACES.
           05 FILLER                  PIC X(08) VALUE "OVERTIME".
-          05 FILLER                  PIC X(03).
+          05 FILLER                  PIC X(03) VALUE ALL SPACES.
           05 FILLER                  PIC X(05) VALUE "GROSS".
-          05 FILLER                  PIC X(04).
+          05 FILLER                  PIC X(04) VALUE ALL SPACES.
           05 FILLER                  PIC X(06) VALUE "DEDUCT".
-          05 FILLER                  PIC X(05).
+          05 FILLER                  PIC X(05) VALUE ALL SPACES.
           05 FILLER                  PIC X(03) VALUE "NET".
        01 WS-PAYROLL-RPT-DETAIL.
-          05 FILLER                  PIC X(21).
+          05 FILLER                  PIC X(21) VALUE ALL SPACES.
           05 DTL-DATE.
              06 DTL-DATE-MM          PIC X(02).
              06 FILLER               PIC X VALUE "/".
              06 DTL-DATE-DD          PIC X(02).
              06 FILLER               PIC X VALUE "/".
              06 DTL-DATE-YY          PIC X(02).
-          05 FILLER                  PIC X(04).
+          05 FILLER                  PIC X(04) VALUE ALL SPACES.
           05 DTL-EMP-OUT             PIC X(06).
-          05 FILLER                  PIC X(07).
+          05 FILLER                  PIC X(07) VALUE ALL SPACES.
           05 DTL-HOURS-WORKED        PIC 9(02).
-          05 FILLER                  PIC X(10).
+          05 FILLER                  PIC X(10) VALUE ALL SPACES.
           05 DTL-HOURLY-RATE         PIC $$.$$.
-          05 FILLER                  PIC X(04).
+          05 FILLER                  PIC X(04) VALUE ALL SPACES.
           05 DTL-BASE-PAY            PIC $$$$.$$.
-          05 FILLER                  PIC X(03).
+          05 FILLER                  PIC X(03) VALUE ALL SPACES.
           05 DTL-OVERTIME            PIC $$$9.99.
-          05 FILLER                  PIC X(03).
+          05 FILLER                  PIC X(03) VALUE ALL SPACES.
           05 DTL-GROSS               PIC $$$$.$$.
-          05 FILLER                  PIC X(03).
+          05 FILLER                  PIC X(03) VALUE ALL SPACES.
           05 DTL-DEDUCT              PIC $$$$.$$.
-          05 FILLER                  PIC X(03).
+          05 FILLER                  PIC X(03) VALUE ALL SPACES.
           05 DTL-NET                 PIC $$$$.$$.
        01 WS-PAYROLL-RPT-DASH-LINE.
-          05 FILLER                  PIC X(21).
+          05 FILLER                  PIC X(21) VALUE ALL SPACES.
           05 FILLER                  PIC X(93) VALUE ALL "-".
        01 WS-PAYROLL-RPT-TOTAL-LINE.
-          05 FILLER                  PIC X(21).
+          05 FILLER                  PIC X(21) VALUE ALL SPACES.
           05 TOTAL-PAYDATE           PIC X(08).
-          05 FILLER                  PIC X(01).
+          05 FILLER                  PIC X(01) VALUE ALL SPACES.
           05 FILLER                  PIC X(06) VALUE "TOTALS".
-          05 FILLER                  PIC X(08).
+          05 FILLER                  PIC X(08) VALUE ALL SPACES.
           05 TOTAL-HOURS-WORKED      PIC ZZZ9.
-          05 FILLER                  PIC X(28).
+          05 FILLER                  PIC X(28) VALUE ALL SPACES.
           05 TOTAL-OVERTIME          PIC $$$$$.$$.
-          05 FILLER                  PIC X(01).
+          05 FILLER                  PIC X(01) VALUE ALL SPACES.
           05 TOTAL-GROSS             PIC $$$$$$.$$.
-          05 FILLER                  PIC X(02).
+          05 FILLER                  PIC X(02) VALUE ALL SPACES.
           05 TOTAL-DEDUCT            PIC $$$$$.$$.
-          05 FILLER                  PIC X(01).
+          05 FILLER                  PIC X(01) VALUE ALL SPACES.
           05 TOTAL-NET-RPT           PIC $$$$$$.$$.
 
 009400 PROCEDURE DIVISION.
